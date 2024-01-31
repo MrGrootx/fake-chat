@@ -1,6 +1,7 @@
 import NetWork from "../Components/NetWork";
 import Textarea from "../Components/Textarea";
 import icon from "../assets/profile.png";
+import WhatsAppUI from "../layouts/WhatsAppUI";
 export const MainPage = () => {
   return (
     <>
@@ -76,9 +77,13 @@ export const MainPage = () => {
               </div>
             </section>
 
-            <section className="border">1</section>
+            <section className="border">
+               <div className="m-2 ">
+                  <WhatsAppUI/>
+               </div>
+            </section>
 
-            
+
           </div>
         </div>
       </section>

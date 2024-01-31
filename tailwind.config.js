@@ -9,6 +9,7 @@ export default {
       colors: {
         ctm: "#164863",
         ctm2: "#232D3F",
+        wts: "#ECE5DD",
       },
     },
   },

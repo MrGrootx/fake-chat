@@ -4,7 +4,8 @@ const NetWork = () => {
       <div className="grid grid-cols-3 gap-x-2 mt-1">
         <div className="">
           <select
-            name=""
+            name="status"
+            id="status"
             className=" outline-none text-sm rounded  block w-full p-2.5 bg-gray-700 placeholder-gray-400 text-white "
           >
             <option value="4G">4G</option>
@@ -17,7 +18,7 @@ const NetWork = () => {
           <div className="">
             <input
               type="time"
-              name=""
+              name="time"
               className="outline-none text-sm rounded block w-full p-2.5 bg-gray-700 dark:placeholder-gray-400 dark:text-white"
             />
           </div>
@@ -27,7 +28,7 @@ const NetWork = () => {
           <div className="">
             <input
               type="date"
-              name=""
+              name="date"
               className="outline-none text-sm rounded block w-full p-2.5 bg-gray-700 dark:placeholder-gray-400 dark:text-white"
             />
           </div>
