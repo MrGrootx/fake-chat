@@ -15,7 +15,7 @@ import icon from "../assets/profile.png";
 const WhatsAppUI = () => {
   return (
     <>
-      <div className=" mx-48">
+      <div className="md:mx-36 lg:mx-48 xl:mx-36 2xl:mx-48">
         <div className="bg-gray-100 rounded">
           <div className="m-1">
             <div className="flex justify-between">
@@ -57,7 +57,7 @@ const WhatsAppUI = () => {
 
             <div className="mt-4 pb-3 w-full">
               <div>
-                <div className="bg-gray-100 inline-block p-2 ml-2 rounded-r-lg rounded-tl-lg font-semibold text-gray-600 text-xs max-w-44 shadow">
+                <div className="bg-gray-100 inline-block p-2 ml-2 rounded-r-lg rounded-tl-lg font-semibold text-gray-600 text-xs md:max-w-36 lg:max-w-44 shadow">
                   <h3>Hello this is Anbu</h3>
                 </div>
               </div>
