@@ -1,3 +1,4 @@
+import { MainPage } from '../Pages/MainPage'
 import icon from '../assets/fake-news.png'
 
 export const TheNavbar = () => {
@@ -15,6 +16,7 @@ export const TheNavbar = () => {
                </ul>
             </div>
          </div>
+         <MainPage/>
       </section>
     </>
   )
