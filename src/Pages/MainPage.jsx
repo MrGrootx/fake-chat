@@ -8,7 +8,7 @@ export const MainPage = () => {
       <section className="bg-ctm">
         <div className="container mx-auto">
           <div className="grid grid-cols-2 gap-x-2 p-3">
-            <section className="border">
+            <section className="">
               <div className="max-w-[500px] mx-auto m-3 p-2 rounded bg-[#176B87]">
                 <div>
                   <h2 className="font-semibold text-white text-center">
@@ -77,7 +77,7 @@ export const MainPage = () => {
               </div>
             </section>
 
-            <section className="border">
+            <section className="">
                <div className="m-2 ">
                   <WhatsAppUI/>
                </div>

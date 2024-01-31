@@ -67,7 +67,7 @@ const WhatsAppUI = () => {
 
             <div className="pb-3 w-full flex justify-end pr-2">
               <div>
-                <div className="bg-gray-100 inline-block p-2 ml-2 rounded-r-lg rounded-tl-lg font-semibold text-gray-600 text-xs  max-w-44 shadow">
+                <div className="bg-gray-100 inline-block p-2 ml-2 rounded-l-lg rounded-tl-lg font-semibold text-gray-600 text-xs  max-w-44 shadow rounded-tr-lg">
                   <h3 className="">
                     Hello this is AnbuHello this is AnbuHello this is AnbuHello
                     this is AnbuHello this is Anbu
