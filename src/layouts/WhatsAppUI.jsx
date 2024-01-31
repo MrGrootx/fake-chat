@@ -4,6 +4,13 @@ import { RiBatteryChargeFill } from "react-icons/ri";
 import { FaArrowLeft } from "react-icons/fa6";
 import { GoDeviceCameraVideo } from "react-icons/go";
 import { BsTelephone } from "react-icons/bs";
+
+import { HiOutlinePlusSm } from "react-icons/hi";
+import { TiMessage } from "react-icons/ti";
+
+import { CiCamera } from "react-icons/ci";
+import { CiMicrophoneOn } from "react-icons/ci";
+
 import icon from "../assets/profile.png";
 const WhatsAppUI = () => {
   return (
@@ -41,39 +48,60 @@ const WhatsAppUI = () => {
             </div>
           </div>
           {/* main */}
-          <div className="bg-wts h-96">
-            <div className="">
-              <h4 className="font-semibold text-xs text-center ">25 oct 2023</h4>
+          <div className="bg-wts ">
+            <div className="pt-3">
+              <h4 className="font-semibold text-xs text-center ">
+                25 oct 2023
+              </h4>
             </div>
 
             <div className="mt-4 pb-3 w-full">
-               <div>
-                  <div className="bg-gray-300 inline-block p-2 ml-2 rounded-r-lg rounded-tl-lg font-semibold text-gray-600 text-xs">
-                  Hello this is Anbu
-               </div>
+              <div>
+                <div className="bg-gray-100 inline-block p-2 ml-2 rounded-r-lg rounded-tl-lg font-semibold text-gray-600 text-xs max-w-44 shadow">
+                  <h3>Hello this is Anbu</h3>
+                </div>
+              </div>
 
-
-               </div>
-
-            {/* Other */}
-            
+              {/* Other */}
             </div>
 
             <div className="pb-3 w-full flex justify-end pr-2">
-               <div>
-                  <div className="bg-gray-300 inline-block p-2 ml-2 rounded-r-lg rounded-tl-lg font-semibold text-gray-600 text-xs">
-                  Hello this is Anbu
-               </div>
+              <div>
+                <div className="bg-gray-100 inline-block p-2 ml-2 rounded-r-lg rounded-tl-lg font-semibold text-gray-600 text-xs  max-w-44 shadow">
+                  <h3 className="">
+                    Hello this is AnbuHello this is AnbuHello this is AnbuHello
+                    this is AnbuHello this is Anbu
+                  </h3>
+                </div>
+              </div>
 
-               
-               </div>
-
-            {/* Other */}
-            
+              {/* Other */}
             </div>
 
-            
+            <div className="pb-2 py-60">
+              <div>
+                <div className="flex items-center">
+                  <div className="relative flex items-center w-full">
+                    <HiOutlinePlusSm className="text-2xl" />
 
+                    <div className="w-full relative ml-1">
+                      <input
+                        type="text"
+                        className="w-full outline-none rounded px-1 py-1 text-xs pl-2"
+                      />
+                      <TiMessage className="absolute right-2 top-1/2 transform -translate-y-1/2" />
+                    </div>
+
+                        {/* Footer  */}
+                    <div className="flex gap-x-2 ml-2 font-bold text-xl">
+                      <CiCamera />
+                      <CiMicrophoneOn />
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

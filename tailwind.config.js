@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         Rubik: ["Rubik", "sans-serif"],
+        Poppins: ["Poppins", "sans-seri"],
       },
       colors: {
         ctm: "#164863",
