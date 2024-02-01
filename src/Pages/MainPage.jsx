@@ -4,6 +4,7 @@ import icon from "../assets/profile.png";
 import WhatsAppUI from "../layouts/WhatsAppUI";
 import SetTime from "../Components/SetTime";
 import NetWork from "../Components/NetWork";
+import Status from "../Components/Status";
 
 export const MainPage = () => {
 
@@ -63,25 +64,14 @@ export const MainPage = () => {
                     </span>
 
 
-                    {/* NetworkSelect Start */}
+                    
                     <div>
                       <div className="grid grid-cols-3 gap-x-2 mt-1">
-                        {/* <div className="">
-                          <select
-                            name="network"
-                            id="networknwt"
-                            onChange={changeFunc}
-                            className=" outline-none text-sm rounded  block w-full p-2.5 bg-gray-700 placeholder-gray-400 text-white "
-                          >
-                            <option value="Wifi">Wifi</option>
-                            <option value="4G">4G</option>
-                            <option value="3G">3G</option>
-                            <option value="2G">2G</option>
-                          </select>
-                        </div> */}
+                        {/* NetWork Components */}
                         <NetWork handleFunction={changeFunc}/>
+                        {/* Time Components */}
                         <div className="">
-                                {/* Time Components */}
+                                
                           <SetTime PersonDetails={Person} handleFunction={changeFunc}/>
                         </div>
 
@@ -104,7 +94,7 @@ export const MainPage = () => {
                     {/* radio WORKING */}
                     <div className="mt-2">
                       <h4 className="font-semibold text-gray-200">Status</h4>
-                      <div className="status flex gap-x-2 items-center">
+                      {/* <div className="status flex gap-x-2 items-center">
                         <label
                           htmlFor="online"
                           className="font-semibold text-gray-200"
@@ -135,7 +125,8 @@ export const MainPage = () => {
                           />
                           Offline
                         </label>
-                      </div>
+                      </div> */}
+                      <Status handleFunction={changeFunc}/>
                     </div>
 
                     {/* textarea */}
