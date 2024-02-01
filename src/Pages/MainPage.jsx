@@ -32,8 +32,8 @@ export const MainPage = () => {
 
   return (
     <>
-      <section className="bg-ctm">
-        <div className="container mx-auto">
+      <section className="bg-ctm ">
+        <div className="container mx-auto py-20">
           <div className="grid xl:grid-cols-2  gap-x-2 p-3">
             <section className="">
               <div className="md:max-w-[500px] w-full mx-auto m-3 p-2 rounded bg-[#176B87]">
