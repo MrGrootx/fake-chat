@@ -24,15 +24,15 @@ const WhatsAppUI = (props) => {
   return (
     <>
       <div className="md:mx-36 lg:mx-48 xl:mx-36 2xl:mx-48">
-        <div className="bg-gray-100 rounded">
+        <div className="bg-[#128c7e] rounded">
           <div className="m-1">
             <div className="flex justify-between">
 
 
               <div>
-                <span className="font-bold uppercase">{time}</span>
+                <span className="font-bold uppercase text-gray-50">{time}</span>
               </div>
-              <div className="flex items-center gap-x-1">
+              <div className="flex items-center gap-x-1 text-gray-50">
                 <MdOutlineSignalCellularAlt className="text-xl" />
                 <span className="font-bold text-xs">{network}</span>
                 <RiBatteryChargeFill className="text-xl" />
@@ -41,19 +41,19 @@ const WhatsAppUI = (props) => {
 
             <div className="flex justify-between mt-2 mx-1">
               <div className="flex items-center gap-x-2">
-                <FaArrowLeft />
+                <FaArrowLeft className="text-gray-50" />
                 <img src={typeof img === 'object' ? URL.createObjectURL(img) : img} className="w-10 h-10 rounded-full" alt="" />
                 <div className="">
-                  <h4 className="font-bold capitalize">
+                  <h4 className="font-bold capitalize text-gray-50">
                     {person}
                   </h4>
-                  <h4 className="font-semibold text-gray-400 text-smn">
+                  <h4 className="font-semibold text-gray-200 text-smn">
                     {status}
                   </h4>
                 </div>
               </div>
 
-              <div className="flex gap-x-3 items-center">
+              <div className="flex gap-x-3 items-center text-gray-50">
                 <GoDeviceCameraVideo className="text-xl" />
                 <BsTelephone className=" text-xl " />
               </div>
@@ -89,7 +89,7 @@ const WhatsAppUI = (props) => {
               <div>
                 <div className="flex items-center">
                   <div className="relative flex items-center w-full">
-                    <HiOutlinePlusSm className="text-2xl" />
+                    <HiOutlinePlusSm className="text-2xl " />
 
                     <div className="w-full relative ml-1">
                       <input
