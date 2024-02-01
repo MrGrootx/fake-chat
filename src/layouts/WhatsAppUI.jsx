@@ -10,7 +10,7 @@ import { TiMessage } from "react-icons/ti";
 
 import { CiCamera } from "react-icons/ci";
 import { CiMicrophoneOn } from "react-icons/ci";
-
+import { FaWifi } from "react-icons/fa";
 // import icon from "../assets/profile.png";
 
 import PropTypes from "prop-types";
@@ -21,7 +21,7 @@ const WhatsAppUI = (props) => {
   const { PersonDetails } = props;
   const { person, status, network, time, myMessage, friendMessage } =
     PersonDetails;
-  // console.log(person);
+
   return (
     <>
       <div className="md:mx-36 lg:mx-48 xl:mx-36 2xl:mx-48">
@@ -35,7 +35,7 @@ const WhatsAppUI = (props) => {
               </div>
               <div className="flex items-center gap-x-1 text-gray-50">
                 <MdOutlineSignalCellularAlt className="text-xl" />
-                <span className="font-bold text-xs">{network}</span>
+                <span className="font-bold text-xs">{network === 'wifi' ? <FaWifi /> : network }</span>
                 <RiBatteryChargeFill className="text-xl" />
               </div>
             </div>
