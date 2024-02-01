@@ -1,12 +1,10 @@
-// import { useState } from "react";
 
-const Textarea = () => {
+import propTypes from 'prop-types'
 
-   // const [User,setUser] = useState({ name: })
+const Textarea = (props) => {
 
-   // function handlepage(e) {
-
-   // }
+  const {handleFunction} = props
+  // console.log(PersonDetails);
 
   return (
     <div>
@@ -14,13 +12,13 @@ const Textarea = () => {
         <div>
           <h3 className="font-semibold text-gray-200">Me</h3>
           <textarea
-            name="textareame"
+            name="myMessage"
             id=""
             cols="30"
             rows="3"
             placeholder="My Message"
             className=" p-1 rounded w-full outline-none font-semibold"
-            // onChange={handlepage}
+            onChange={handleFunction}
           ></textarea>
         </div>
       </div>
@@ -29,13 +27,13 @@ const Textarea = () => {
         <div>
           <h3 className="font-semibold text-gray-200">Other</h3>
           <textarea
-            name="textareameother"
+            name="friendMessage"
             id=""
             cols="30"
             rows="3"
             placeholder="Other's Message"
             className=" p-1 rounded w-full outline-none font-semibold"
-            // onChange={handlepage}
+            onChange={handleFunction}
           ></textarea>
         </div>
       </div>
@@ -44,3 +42,7 @@ const Textarea = () => {
 };
 
 export default Textarea;
+
+Textarea.propTypes = {
+  handleFunction: propTypes.func
+}

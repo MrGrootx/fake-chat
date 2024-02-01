@@ -20,13 +20,15 @@ const WhatsAppUI = (props) => {
   const { PersonDetails } = props;
   const { person, status, network, time, myMessage, friendMessage } =
     PersonDetails;
-
+  // console.log(person);
   return (
     <>
       <div className="md:mx-36 lg:mx-48 xl:mx-36 2xl:mx-48">
         <div className="bg-gray-100 rounded">
           <div className="m-1">
             <div className="flex justify-between">
+
+
               <div>
                 <span className="font-bold">{time}</span>
               </div>
@@ -42,7 +44,7 @@ const WhatsAppUI = (props) => {
                 <FaArrowLeft />
                 <img src={icon} className="w-10 h-10" alt="" />
                 <div className="">
-                  <h4 className="font-bold">
+                  <h4 className="font-bold capitalize">
                     {person}
                   </h4>
                   <h4 className="font-semibold text-gray-400 text-smn">

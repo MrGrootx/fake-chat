@@ -2,23 +2,26 @@ import { useState } from "react";
 import Textarea from "../Components/Textarea";
 import icon from "../assets/profile.png";
 import WhatsAppUI from "../layouts/WhatsAppUI";
+import SetTime from "../Components/SetTime";
 
 export const MainPage = () => {
-  const [User, SetUser] = useState({
+
+  // Creating a Object using useState() Function and setting default values
+  const [Person, SetContent] = useState({
     person: "Abishek",
     status: "online",
     network: "wifi",
-    time: "12:00",
+    time: "12:00 PM",
     myMessage: "This me My Message",
     friendMessage: "This is Friend Message",
   });
 
   function changeFunc(e) {
     const name = e.target.name;
-    // console.log(name);
+    console.log(name);
     const value =
       e.target.type === "checked" ? e.target.checked : e.target.value;
-    SetUser({ ...User, [name]: value });
+      SetContent({ ...Person, [name]: value });
   }
 
   return (
@@ -41,13 +44,14 @@ export const MainPage = () => {
                         </label>
                       </div>
                     </div>
-                    <div>
+                    <div className=" overflow-hidden inline-block">
                       <input
                         type="text"
-                        name="name"
-                        placeholder="Name"
-                        className="outline-none rounded px-2 py-1"
+                        name="person"
+                        placeholder="Name of the Person"
                         onChange={changeFunc}
+                        className="outline-none rounded px-2 py-1 inline-block"
+                        maxLength="10"
                       />
                     </div>
                   </div>
@@ -68,27 +72,31 @@ export const MainPage = () => {
                             onChange={changeFunc}
                             className=" outline-none text-sm rounded  block w-full p-2.5 bg-gray-700 placeholder-gray-400 text-white "
                           >
+                            <option value="Wifi">Wifi</option>
                             <option value="4G">4G</option>
                             <option value="3G">3G</option>
                             <option value="2G">2G</option>
-                            <option value="Wifi">Wifi</option>
                           </select>
                         </div>
                         <div className="">
-                          <div className="">
+                          {/* <div className="">
                             <input
-                              type="time"
+                              type="text"
                               name="time"
+                              onChange={changeFunc}
+                              value={Person.time}
                               className="outline-none text-sm rounded block w-full p-2.5 bg-gray-700 dark:placeholder-gray-400 dark:text-white"
                             />
-                          </div>
+                          </div> */}
+                          <SetTime PersonDetails={Person} handleFunction={changeFunc}/>
                         </div>
 
                         <div className="">
                           <div className="">
                             <input
                               type="date"
-                              name="date"
+                              onChange={changeFunc}
+                              // name="time"
                               className="outline-none text-sm rounded block w-full p-2.5 bg-gray-700 dark:placeholder-gray-400 dark:text-white"
                             />
                           </div>
@@ -137,7 +145,7 @@ export const MainPage = () => {
                     </div>
 
                     {/* textarea */}
-                    <Textarea onChange={changeFunc} />
+                    <Textarea handleFunction={changeFunc} PersonDetails={Person}  />
                   </div>
                 </div>
               </div>
@@ -145,7 +153,7 @@ export const MainPage = () => {
 
             <section className="">
               <div className="m-2 ">
-                <WhatsAppUI PersonDetails={User} Change={changeFunc} />
+                <WhatsAppUI PersonDetails={Person} />
               </div>
             </section>
           </div>
