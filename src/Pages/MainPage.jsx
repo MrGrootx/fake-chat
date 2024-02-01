@@ -1,8 +1,26 @@
-import NetWork from "../Components/NetWork";
+import { useState } from "react";
 import Textarea from "../Components/Textarea";
 import icon from "../assets/profile.png";
 import WhatsAppUI from "../layouts/WhatsAppUI";
+
 export const MainPage = () => {
+  const [User, SetUser] = useState({
+    person: "Abishek",
+    status: "online",
+    network: "wifi",
+    time: "12:00",
+    myMessage: "This me My Message",
+    friendMessage: "This is Friend Message",
+  });
+
+  function changeFunc(e) {
+    const name = e.target.name;
+    // console.log(name);
+    const value =
+      e.target.type === "checked" ? e.target.checked : e.target.value;
+    SetUser({ ...User, [name]: value });
+  }
+
   return (
     <>
       <section className="bg-ctm">
@@ -26,9 +44,10 @@ export const MainPage = () => {
                     <div>
                       <input
                         type="text"
-                        name=""
+                        name="name"
                         placeholder="Name"
                         className="outline-none rounded px-2 py-1"
+                        onChange={changeFunc}
                       />
                     </div>
                   </div>
@@ -37,21 +56,66 @@ export const MainPage = () => {
                     <span className="font-semibold text-gray-200">
                       Network & Time
                     </span>
-                    <NetWork />
 
-                    {/* radio */}
+
+                    {/* NetworkSelect Start */}
+                    <div>
+                      <div className="grid grid-cols-3 gap-x-2 mt-1">
+                        <div className="">
+                          <select
+                            name="network"
+                            id="networknwt"
+                            onChange={changeFunc}
+                            className=" outline-none text-sm rounded  block w-full p-2.5 bg-gray-700 placeholder-gray-400 text-white "
+                          >
+                            <option value="4G">4G</option>
+                            <option value="3G">3G</option>
+                            <option value="2G">2G</option>
+                            <option value="Wifi">Wifi</option>
+                          </select>
+                        </div>
+                        <div className="">
+                          <div className="">
+                            <input
+                              type="time"
+                              name="time"
+                              className="outline-none text-sm rounded block w-full p-2.5 bg-gray-700 dark:placeholder-gray-400 dark:text-white"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="">
+                          <div className="">
+                            <input
+                              type="date"
+                              name="date"
+                              className="outline-none text-sm rounded block w-full p-2.5 bg-gray-700 dark:placeholder-gray-400 dark:text-white"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {/* NetworkSelect End */}
+
+                    
+
+                    {/* radio WORKING */}
                     <div className="mt-2">
                       <h4 className="font-semibold text-gray-200">Status</h4>
                       <div className="status flex gap-x-2 items-center">
                         <label
                           htmlFor="online"
                           className="font-semibold text-gray-200"
+                          
+                          
                         >
                           <input
                             type="radio"
                             name="status"
                             className="mr-2"
                             id="online"
+                            value="Online"
+                            onChange={changeFunc}
                           />
                           Online
                         </label>
@@ -64,6 +128,8 @@ export const MainPage = () => {
                             name="status"
                             className="mr-2"
                             id="offline"
+                            value="Offline"
+                            onChange={changeFunc}
                           />
                           Offline
                         </label>
@@ -71,19 +137,17 @@ export const MainPage = () => {
                     </div>
 
                     {/* textarea */}
-                    <Textarea />
+                    <Textarea onChange={changeFunc} />
                   </div>
                 </div>
               </div>
             </section>
 
             <section className="">
-               <div className="m-2 ">
-                  <WhatsAppUI/>
-               </div>
+              <div className="m-2 ">
+                <WhatsAppUI PersonDetails={User} Change={changeFunc} />
+              </div>
             </section>
-
-
           </div>
         </div>
       </section>

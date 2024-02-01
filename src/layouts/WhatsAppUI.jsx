@@ -12,7 +12,15 @@ import { CiCamera } from "react-icons/ci";
 import { CiMicrophoneOn } from "react-icons/ci";
 
 import icon from "../assets/profile.png";
-const WhatsAppUI = () => {
+
+import PropTypes from "prop-types";
+
+const WhatsAppUI = (props) => {
+  // console.log(props.Person);
+  const { PersonDetails } = props;
+  const { person, status, network, time, myMessage, friendMessage } =
+    PersonDetails;
+
   return (
     <>
       <div className="md:mx-36 lg:mx-48 xl:mx-36 2xl:mx-48">
@@ -20,11 +28,11 @@ const WhatsAppUI = () => {
           <div className="m-1">
             <div className="flex justify-between">
               <div>
-                <span className="font-bold">10:32</span>
+                <span className="font-bold">{time}</span>
               </div>
               <div className="flex items-center gap-x-1">
                 <MdOutlineSignalCellularAlt className="text-xl" />
-                <span className="font-bold text-xs">5G</span>
+                <span className="font-bold text-xs">{network}</span>
                 <RiBatteryChargeFill className="text-xl" />
               </div>
             </div>
@@ -34,9 +42,11 @@ const WhatsAppUI = () => {
                 <FaArrowLeft />
                 <img src={icon} className="w-10 h-10" alt="" />
                 <div className="">
-                  <h4 className="font-bold">Groot</h4>
+                  <h4 className="font-bold">
+                    {person}
+                  </h4>
                   <h4 className="font-semibold text-gray-400 text-smn">
-                    online
+                    {status}
                   </h4>
                 </div>
               </div>
@@ -50,15 +60,13 @@ const WhatsAppUI = () => {
           {/* main */}
           <div className="bg-wts ">
             <div className="pt-3">
-              <h4 className="font-semibold text-xs text-center ">
-                25 oct 2023
-              </h4>
+              <h4 className="font-semibold text-xs text-center ">{time}</h4>
             </div>
 
             <div className="mt-4 pb-3 w-full">
               <div>
                 <div className="bg-gray-100 inline-block p-2 ml-2 rounded-r-lg rounded-tl-lg font-semibold text-gray-600 text-xs md:max-w-36 lg:max-w-44 shadow">
-                  <h3>Hello this is Anbu</h3>
+                  <h3>{friendMessage}</h3>
                 </div>
               </div>
 
@@ -68,10 +76,7 @@ const WhatsAppUI = () => {
             <div className="pb-3 w-full flex justify-end pr-2">
               <div>
                 <div className="bg-gray-100 inline-block p-2 ml-2 rounded-l-lg rounded-tl-lg font-semibold text-gray-600 text-xs  max-w-44 shadow rounded-tr-lg">
-                  <h3 className="">
-                    Hello this is AnbuHello this is AnbuHello this is AnbuHello
-                    this is AnbuHello this is Anbu
-                  </h3>
+                  <h3 className="">{myMessage}</h3>
                 </div>
               </div>
 
@@ -92,12 +97,11 @@ const WhatsAppUI = () => {
                       <TiMessage className="absolute right-2 top-1/2 transform -translate-y-1/2" />
                     </div>
 
-                        {/* Footer  */}
+                    {/* Footer  */}
                     <div className="flex gap-x-2 ml-2 font-bold text-xl">
                       <CiCamera />
                       <CiMicrophoneOn />
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -110,3 +114,7 @@ const WhatsAppUI = () => {
 };
 
 export default WhatsAppUI;
+
+WhatsAppUI.propTypes = {
+  PersonDetails: PropTypes.object,
+};
