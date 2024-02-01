@@ -3,6 +3,7 @@ import Textarea from "../Components/Textarea";
 import icon from "../assets/profile.png";
 import WhatsAppUI from "../layouts/WhatsAppUI";
 import SetTime from "../Components/SetTime";
+import NetWork from "../Components/NetWork";
 
 export const MainPage = () => {
 
@@ -18,7 +19,7 @@ export const MainPage = () => {
 
   function changeFunc(e) {
     const name = e.target.name;
-    console.log(name);
+    // console.log(name);
     const value =
       e.target.type === "checked" ? e.target.checked : e.target.value;
       SetContent({ ...Person, [name]: value });
@@ -65,7 +66,7 @@ export const MainPage = () => {
                     {/* NetworkSelect Start */}
                     <div>
                       <div className="grid grid-cols-3 gap-x-2 mt-1">
-                        <div className="">
+                        {/* <div className="">
                           <select
                             name="network"
                             id="networknwt"
@@ -77,17 +78,10 @@ export const MainPage = () => {
                             <option value="3G">3G</option>
                             <option value="2G">2G</option>
                           </select>
-                        </div>
+                        </div> */}
+                        <NetWork handleFunction={changeFunc}/>
                         <div className="">
-                          {/* <div className="">
-                            <input
-                              type="text"
-                              name="time"
-                              onChange={changeFunc}
-                              value={Person.time}
-                              className="outline-none text-sm rounded block w-full p-2.5 bg-gray-700 dark:placeholder-gray-400 dark:text-white"
-                            />
-                          </div> */}
+                                {/* Time Components */}
                           <SetTime PersonDetails={Person} handleFunction={changeFunc}/>
                         </div>
 
