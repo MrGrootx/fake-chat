@@ -10,10 +10,10 @@ const Status = (props) => {
             name="status"
             className="mr-2"
             id="online"
-            value="Online"
+            value="online"
             onChange={handleFunction}
           />
-          Online
+          online
         </label>
         <label htmlFor="offline" className="font-semibold text-gray-200">
           <input
@@ -21,10 +21,10 @@ const Status = (props) => {
             name="status"
             className="mr-2"
             id="offline"
-            value="Offline"
+            value="offline"
             onChange={handleFunction}
           />
-          Offline
+          offline
         </label>
       </div>
     </div>

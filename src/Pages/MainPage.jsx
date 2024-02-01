@@ -5,9 +5,9 @@ import WhatsAppUI from "../layouts/WhatsAppUI";
 import SetTime from "../Components/SetTime";
 import NetWork from "../Components/NetWork";
 import Status from "../Components/Status";
+import Setdate from "../Components/Setdate";
 
 export const MainPage = () => {
-
   // Creating a Object using useState() Function and setting default values
   const [Person, SetContent] = useState({
     person: "Abishek",
@@ -23,7 +23,7 @@ export const MainPage = () => {
     // console.log(name);
     const value =
       e.target.type === "checked" ? e.target.checked : e.target.value;
-      SetContent({ ...Person, [name]: value });
+    SetContent({ ...Person, [name]: value });
   }
 
   return (
@@ -62,75 +62,40 @@ export const MainPage = () => {
                     <span className="font-semibold text-gray-200">
                       Network & Time
                     </span>
-
-
                     
+                    {/* Network & Time */}
                     <div>
                       <div className="grid grid-cols-3 gap-x-2 mt-1">
                         {/* NetWork Components */}
-                        <NetWork handleFunction={changeFunc}/>
+                        <NetWork handleFunction={changeFunc} />
                         {/* Time Components */}
                         <div className="">
-                                
-                          <SetTime PersonDetails={Person} handleFunction={changeFunc}/>
+                          <SetTime
+                            PersonDetails={Person}
+                            handleFunction={changeFunc}
+                          />
                         </div>
 
+                        {/* Date Components [❌ Stream] */}
                         <div className="">
-                          <div className="">
-                            <input
-                              type="date"
-                              onChange={changeFunc}
-                              // name="time"
-                              className="outline-none text-sm rounded block w-full p-2.5 bg-gray-700 dark:placeholder-gray-400 dark:text-white"
-                            />
-                          </div>
+                          <Setdate handleFunction={changeFunc} />
                         </div>
                       </div>
                     </div>
                     {/* NetworkSelect End */}
 
-                    
-
-                    {/* radio WORKING */}
+                    {/* radio Components */}
                     <div className="mt-2">
                       <h4 className="font-semibold text-gray-200">Status</h4>
-                      {/* <div className="status flex gap-x-2 items-center">
-                        <label
-                          htmlFor="online"
-                          className="font-semibold text-gray-200"
-                          
-                          
-                        >
-                          <input
-                            type="radio"
-                            name="status"
-                            className="mr-2"
-                            id="online"
-                            value="Online"
-                            onChange={changeFunc}
-                          />
-                          Online
-                        </label>
-                        <label
-                          htmlFor="offline"
-                          className="font-semibold text-gray-200"
-                        >
-                          <input
-                            type="radio"
-                            name="status"
-                            className="mr-2"
-                            id="offline"
-                            value="Offline"
-                            onChange={changeFunc}
-                          />
-                          Offline
-                        </label>
-                      </div> */}
-                      <Status handleFunction={changeFunc}/>
+                      <Status handleFunction={changeFunc} />
                     </div>
 
                     {/* textarea */}
-                    <Textarea handleFunction={changeFunc} PersonDetails={Person}  />
+                    <Textarea
+                      handleFunction={changeFunc}
+                      PersonDetails={Person}
+                    />
+
                   </div>
                 </div>
               </div>
