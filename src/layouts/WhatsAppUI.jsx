@@ -14,11 +14,12 @@ import { CiMicrophoneOn } from "react-icons/ci";
 // import icon from "../assets/profile.png";
 
 import PropTypes from "prop-types";
+import TheImg from "../Components/TheImg";
 
 const WhatsAppUI = (props) => {
   // console.log(props.Person);
   const { PersonDetails } = props;
-  const { person, status, network, time, myMessage, friendMessage,img } =
+  const { person, status, network, time, myMessage, friendMessage } =
     PersonDetails;
   // console.log(person);
   return (
@@ -42,7 +43,8 @@ const WhatsAppUI = (props) => {
             <div className="flex justify-between mt-2 mx-1">
               <div className="flex items-center gap-x-2">
                 <FaArrowLeft className="text-gray-50" />
-                <img src={typeof img === 'object' ? URL.createObjectURL(img) : img} className="w-10 h-10 rounded-full" alt="" />
+                {/* <img src={typeof img === 'object' ? URL.createObjectURL(img) : img} className="w-10 h-10 rounded-full" alt="" /> */}
+                <TheImg PersonDetails={PersonDetails}/>
                 <div className="">
                   <h4 className="font-bold capitalize text-gray-50">
                     {person}
