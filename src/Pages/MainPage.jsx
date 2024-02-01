@@ -20,13 +20,21 @@ export const MainPage = () => {
     time: time,
     myMessage: myMessage,
     friendMessage: friendMessage,
+    img: icon
   });
 
   function changeFunc(e) {
     const name = e.target.name;
-    // console.log(name);
-    const value =
-      e.target.type === "checked" ? e.target.checked : e.target.value;
+    let value;
+  
+    if (e.target.type === "checkbox") {
+      value = e.target.checked;
+    } else if (e.target.type === "file") {
+      value = e.target.files[0];
+    } else {
+      value = e.target.value;
+    }
+  
     SetContent({ ...Person, [name]: value });
   }
 
@@ -46,7 +54,12 @@ export const MainPage = () => {
                       <div className="flex items-center justify-center bg-grey-lighter ">
                         <label className=" flex flex-col items-center p-3 py-2 py-  text-blue rounded-lg tracking-wide uppercase  cursor-pointer hover:bg-blue ">
                           <img src={icon} className="w-12" alt="" />
-                          <input type="file" className="hidden" />
+                          <input
+                            type="file"
+                            className="hidden"
+                            name="img"
+                            onChange={changeFunc}
+                          />
                         </label>
                       </div>
                     </div>
