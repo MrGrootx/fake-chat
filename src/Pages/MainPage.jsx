@@ -7,15 +7,19 @@ import NetWork from "../Components/NetWork";
 import Status from "../Components/Status";
 import Setdate from "../Components/Setdate";
 
+import settings from "../data/setting";
+
 export const MainPage = () => {
   // Creating a Object using useState() Function and setting default values
+
+  const { person, status, network, time, myMessage, friendMessage } = settings;
   const [Person, SetContent] = useState({
-    person: "Abishek",
-    status: "online",
-    network: "wifi",
-    time: "12:00 PM",
-    myMessage: "This me My Message",
-    friendMessage: "This is Friend Message",
+    person: person,
+    status: status,
+    network: network,
+    time: time,
+    myMessage: myMessage,
+    friendMessage: friendMessage,
   });
 
   function changeFunc(e) {
@@ -62,7 +66,7 @@ export const MainPage = () => {
                     <span className="font-semibold text-gray-200">
                       Network & Time
                     </span>
-                    
+
                     {/* Network & Time */}
                     <div>
                       <div className="grid grid-cols-3 gap-x-2 mt-1">
@@ -95,7 +99,6 @@ export const MainPage = () => {
                       handleFunction={changeFunc}
                       PersonDetails={Person}
                     />
-
                   </div>
                 </div>
               </div>

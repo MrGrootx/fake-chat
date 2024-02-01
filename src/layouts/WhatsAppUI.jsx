@@ -30,7 +30,7 @@ const WhatsAppUI = (props) => {
 
 
               <div>
-                <span className="font-bold">{time}</span>
+                <span className="font-bold uppercase">{time}</span>
               </div>
               <div className="flex items-center gap-x-1">
                 <MdOutlineSignalCellularAlt className="text-xl" />
@@ -62,7 +62,7 @@ const WhatsAppUI = (props) => {
           {/* main */}
           <div className="bg-wts ">
             <div className="pt-3">
-              <h4 className="font-semibold text-xs text-center ">{time}</h4>
+              <h4 className="font-semibold text-xs text-center uppercase">{time}</h4>
             </div>
 
             <div className="mt-4 pb-3 w-full">

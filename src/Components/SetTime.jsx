@@ -11,8 +11,8 @@ const SetTime = (props) => {
           name="time"
           onChange={handleFunction}
           value={time}
-          className="outline-none text-sm rounded block w-full p-2.5 bg-gray-700 dark:placeholder-gray-400 dark:text-white"
-          maxLength="6"
+          className="outline-none text-sm rounded block w-full p-2.5 bg-gray-700 dark:placeholder-gray-400 dark:text-white uppercase"
+          maxLength="8"
         />
       </div>
     </div>
